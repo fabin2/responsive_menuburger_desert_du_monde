@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+a {
+    color: #000;
+}
+
+  /* header */
+
+.header {
+    background-color: #f4f4f4;
+}
+
+.header h1::before {
+    display: block;
+    /* content: "Version Ecran Smartphone (<768px)"; */
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 1rem;
+}
+
+.header ul {
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.header li a {
+    display: block;
+    padding: 1.25rem 1.25rem;
+    text-decoration: none;
+}
+
+  /* menu */
+
+.header .menu {
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+  /* menu icone */
+
+.header .menu-icone {
+    cursor: pointer;
+    display: block;
+    padding: 1.75rem 1.25rem;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icone .nav-icone { /* Définit le span initial */
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 1.375rem;
+}
+
+.header .menu-icone .nav-icone:before,
+.header .menu-icone .nav-icone:after { /* Définit les spans ajoutés */
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+/* Placer les span au-dessus et au-dessous du span initial */
+.header .menu-icone .nav-icone:before {
+    top: -5px;
+}
+
+.header .menu-icone .nav-icone:after {
+    top: 5px;
+}
+
+  /* menu bouton */
+
+.header .menu-bouton {
+    display: none;
+}
+
+.header .menu-bouton:checked ~ .menu {
+    max-height: 15rem; /* définit la taille du conteneur des liens*/
+}
+
+.header .menu-bouton:checked ~ .menu-icone .nav-icone {
+    background: transparent;/* Fait disparaître le span initial*/
+}
+
+.header .menu-bouton:checked ~ .menu-icone .nav-icone:before {
+    transform: rotate(-45deg); /* fait pivoter le span before de 45 degrès ver la gauche*/
+}
+
+.header .menu-bouton:checked ~ .menu-icone .nav-icone:after {
+    transform: rotate(45deg);/* fait pivoter le span after de 45 degrès ver la droite*/
+}
+
+.header .menu-bouton:checked ~ .menu-icone .nav-icone:before,
+.header .menu-bouton:checked ~ .menu-icone .nav-icone:after {
+    top: 0; /* Déplace les span pour les superposer */
+}
+
+/* After menu burger */
+.logo-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .5rem;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main {
+    margin: 1rem;
+    padding: 1.5rem;
+}
+.main h2 {
+    text-align: center;
+    padding: 1rem;
+}
+.logo-heading img{
+    width: 5rem;
+}
+h1{
+    color: #a55122;
+    font-size: 35px;
+}
+ul li{
+    list-style: none;
+    text-align: center;
+    padding: 1rem;
+}
+nav {
+    width: 100%;
+}
+ul{
+    width: 80%;
+}
+.menu li {
+    padding: 0.5rem;
+    margin: .1rem auto;
+    background-color:#c58540;
+    /* border: solid 1px red; */
+    border-radius: 10px;
+
+}
+h2{
+    font-weight: lighter;
+}
+.main img{
+    width:100%
+}
+p{
+    margin-top: 1rem;
+}
+footer{
+    padding: 2rem;
+    text-align: center;
+}
+/* Tab gallery version tab */
+.below-tab{
+    display: none;
+}
+@media only screen and (min-width: 768px) and (max-width:1024px){
+    h1 {
+        font-size: 45px;
+    }
+    /* .header{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    } */
+    .menu{
+        display: flex;
+        flex-direction: row;
+        background-color: none;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    nav {
+    width: 100%;
+    }
+                                                    /* FF */
+    .logo-heading{
+        display: flex;
+        flex-direction: row;
+       
+    }
+
+
+    .below-tab{
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid lightgray;
+        padding-top: 1rem;
+    }
+    .below-tab1 {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        padding-left: 2rem;
+    }
+    .below-tab1 h2{
+        margin-bottom: 1rem;
+    }
+    .below-tab2{
+        width: 60%;
+        padding-left: 2rem;
+        padding-bottom: 4rem;
+    }
+    .below-tab h2{
+        color: #a55122;
+        border-bottom: 1px solid lightgray;
+    }
+    .img-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 1rem;
+    }
+    .img-gallery img{
+        width: 4rem;
+        margin: 1px;
+    }
+}
+/* Desktop version */
+@media only screen and (min-width: 1025px) {
+    
+        /* *{border: 1px solid green;} */
+    
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+/* hiding menu burger */
+    .header .menu {
+        clear: none;
+        max-height: none;
+    }
+/* hiding menu burger */
+    .header .menu-icone {
+        display: none;
+    }
+     /* FF */
+    h1 {
+        font-size: 55px;
+    }
+
+    .container {
+        display: flex;
+        border-top: 1px solid black;
+    }
+    .logo-heading{
+        flex-direction: row;
+        padding:3rem;
+    }
+    .menu{
+        display: flex;
+        padding-top: 2rem;
+        padding-right: 2rem;
+    }
+    .menu li{
+        background-color: white;
+    }
+    .menu li a{
+        background-color: white
+    }
+    
+    /* Hidden checkbox  */
+     .menu-button{
+        display: none;
+    }
+    .main{
+        width: 80%;
+    }
+    .below-tab{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:4rem;
+    }
+    .below-tab1{
+        width: 100%;
+    }
+    .below-tab1 h2{
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    ol li{
+        margin-left: 1rem;
+    }
+    .below-tab2{
+        padding-top: 8rem;
+    }
+    .below-tab2 h2{
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+        margin-bottom: 1rem;
+    }
+    .img-gallery{
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        align-items: center;
+    }
+    .img-gallery img{
+        width: 4rem;
+        margin: 1px;
+    }
+}
+/* 48rem = 768px qui est la résolution min des écran pc*/
